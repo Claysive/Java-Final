@@ -57,10 +57,34 @@ public class Story
       "it, you have been healed, along with your overall health being increased by 200.");
    }
    
-   public static void healText()
+    public static void levelUp2Text()
+   {
+      JOptionPane.showMessageDialog(null, "You have found a treasure chest inside of the room. It contains a potion. After drinking\n" +
+      "it, you have been healed, along with your overall health being increased by 300.");
+   }
+   
+    public static void levelUp3Text()
+   {
+      JOptionPane.showMessageDialog(null, "You have found a treasure chest inside of the room. It contains a potion. After drinking\n" +
+      "it, you have been healed, along with your overall health being increased by 400.");
+   }
+   
+   public static void healText1()
    {
       JOptionPane.showMessageDialog(null, "Although you have failed to open the door, you have stumbled across a small potion. After\n" +
       "drinking it, your health has been restored to 700. ");
+   }
+   
+   public static void healText2()
+   {
+      JOptionPane.showMessageDialog(null, "Although you have failed to open the door, you have stumbled across a small potion. After\n" +
+      "drinking it, your health has been restored to 900. ");
+   }
+   
+   public static void healText3()
+   {
+      JOptionPane.showMessageDialog(null, "Although you have failed to open the door, you have stumbled across a small potion. After\n" +
+      "drinking it, your health has been restored to 1200. ");
    }
 
 }

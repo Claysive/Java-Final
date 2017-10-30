@@ -102,11 +102,24 @@ public class Player
       hp = 0;
       return hp;
    }
-   
+   //method to level the player up upon completion of the first mini game
    public void levelUp1()
    {
       this.health = 900;
       Story.levelUp1Text();
    }
+   //method to level the player up upon completion of the second mini game
+   public void levelUp2()
+   {
+      this.health = 1200;
+      Story.levelUp2Text();
+   }
+   //method to level the player up upon completion of the third mini game
+   public void levelUp3()
+   {
+      this.health = 1600;
+      Story.levelUp3Text();
+   }
+   
 
 }

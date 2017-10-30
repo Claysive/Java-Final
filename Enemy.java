@@ -1,0 +1,89 @@
+/*
+   Starting point for a boss class, or any of the
+   opponents for that matter. 
+*/
+
+public class Enemy
+{
+   //int used to set/get random number roll from 1-10.
+   int roll1;
+   int roll2;
+   //Highest Value you want the roll to be.
+   static final int HIGHEST_DIE_VALUE10 = 10;
+   static final int HIGHEST_DIE_VALUE20 = 20;
+    //Lowest Value you want the roll to be.
+   static final int LOWEST_DIE_VALUE10 = 1;
+   static final int LOWEST_DIE_VALUE20 = 1;
+   private final String name;
+   public int health;
+   public int damage;
+   
+   //extra parameter added (armor).
+   public Enemy(String name, int health)
+   {
+      this.name = name;
+      this.health = health;
+      
+   }
+   
+   public String getName()
+   {
+      return name;
+   }
+   
+   public int getHealth()
+   {
+      return health;
+   }
+  
+
+   
+   public void setBossRoll10()
+   {
+   
+   roll1 = ((int)(Math.random() * 100) % HIGHEST_DIE_VALUE10 + LOWEST_DIE_VALUE10);
+   }
+  
+
+   public int getRoll1()
+   {
+   return roll1;
+   }
+   //method for getting Players Roll.
+ 
+    // method to perform a low damage hit on an opponent
+   public int lowHit(int start)
+   {
+      damage = ((int)(Math.random() * 100) % 25 + 35);
+      int hp = start - damage;
+      
+      //modified to turn hp to 0 once it drops below or equals 0.
+      if(hp <= 0)
+      hp = 0;
+      return hp;
+   }
+    // method to perform a High damage hit on an opponent
+   public int HighHit(int start)
+   {
+      damage = ((int)(Math.random() * 100) % 36 + 60);
+      int hp = start - damage;
+      
+      //modified to turn hp to 0 once it drops below or equals 0.
+      if(hp <= 0)
+      hp = 0;
+      return hp;
+   }
+    // method to perform a Critical damage hit on an opponent
+     public int CriticalHit(int start)
+   {
+      damage = ((int)(Math.random() * 100) % 90 + 130);
+      int hp = start - damage;
+      
+      //modified to turn hp to 0 once it drops below or equals 0.
+      if(hp <= 0)
+      hp = 0;
+      return hp;
+   }
+
+
+}

@@ -120,6 +120,24 @@ public class Player
       this.health = 1600;
       Story.levelUp3Text();
    }
+   //method to heal the player after defeating first boss. This is only if the mini game to unlock the door was failed
+   public void heal1()
+   {
+      this.health = 700;
+      Story.healText1();
+   }
+   //method to heal the player after defeating second boss. This is only if the mini game to unlock the door was failed
+   public void heal2()
+   {
+      this.health = 900;
+      Story.healText2();
+   }
+   //method to heal the player after defeating third boss. This is only if the mini game to unlock the door was failed
+   public void heal3()
+   {
+      this.health = 1200;
+      Story.healText3();
+   }
    
 
 }

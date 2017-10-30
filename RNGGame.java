@@ -58,6 +58,10 @@ public static void main(String[] args)
             {
                player.levelUp1();
             }
+            else
+            {
+               player.heal1();
+            }
          
          
          newStory.showText4();

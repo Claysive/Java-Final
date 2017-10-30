@@ -59,8 +59,8 @@ public static void main(String[] args)
                player.levelUp1();
             }
          
-         //System.out.println(player.getHealth());
-         //newStory.showText4();
+         
+         newStory.showText4();
       }
       
       //if the player is dead/lost after the 2nd battle, game over

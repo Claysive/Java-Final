@@ -59,7 +59,8 @@ public class Story
    
    public static void healText()
    {
-      
+      JOptionPane.showMessageDialog(null, "Although you have failed to open the door, you have stumbled across a small potion. After\n" +
+      "drinking it, your health has been restored to 700. ");
    }
 
 }

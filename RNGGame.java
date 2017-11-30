@@ -6,12 +6,6 @@ public class RNGGame
 public static void main(String[] args)
 {
   
-   //All the enemies
-   Enemy oppenent = new Enemy("Thug", 450);
-   Enemy boss = new Enemy("Arthur Black", 600);
-   Enemy oppenent2 = new Enemy("Elite Thug",500);
-   Enemy boss2 = new Enemy("Captain Greymane",550);
-   Enemy oppenent3 = new Enemy("Silver Knight",570);
    //String to store fight result from calling the StartFight method in the Fight2 class.
    String FightResult = " ";
    //String to store player name
@@ -24,6 +18,13 @@ public static void main(String[] args)
    Scanner keyboard = new Scanner(System.in);
    //variable to track which door player chooses 1,2, or 3.
    int playerchoice = 0;
+   
+   //variable to store difficulty choice
+   int diffChoice = 0;
+   
+   //variable for health modifiers
+   double eMod = 0, pMod = 0;
+   
    //boolean variables for the three minigames that are behind the doors.
    boolean isPalin = false;
    boolean isRiddle = false;
@@ -33,6 +34,10 @@ public static void main(String[] args)
    
    //Ask/get player custom name and makes player object with custom name
    playerName = JOptionPane.showInputDialog(null,"What is your name?");
+   
+     
+   
+   
    
    //inventory for player that keeps up with armor tier sets.
    //player starts with linen tier set(set 1). As player defeats new bosses , player has a chance to recieve the next tier set.
@@ -59,8 +64,43 @@ public static void main(String[] args)
                    inventory[3][0] = 1;
                    inventory[4][0] = 1;
                                  
+  
+   //Ask/get player's difficulty
+   System.out.println("Difficulty:\nEasy - 1\nNormal - 2 \nHard - 3");
+   diffChoice = keyboard.nextInt();
+   
+   //Based on choice, sets health modifications
+   switch(diffChoice)
+   {
+      case 1 :
+         eMod = 0.5;
+         pMod = 2.00;
+         break;
+     case 2 :
+         eMod = 1.00;
+         pMod = 1.00;
+         break;
+     case 3 :
+         eMod = 1.50;
+         pMod = .75;
+         break;
+     default:
+         System.out.println("Input Error - Difficulty set to normal");
+         eMod = 1.00;
+         pMod = 1.00;
+         break;
+   }
+   
+   //All the enemies
+   Enemy oppenent = new Enemy("Thug", 450, eMod);
+   Enemy boss = new Enemy("Arthur Black", 600, eMod);
+   Enemy oppenent2 = new Enemy("Elite Thug",500, eMod);
+   Enemy boss2 = new Enemy("Captain Greymane",550, eMod);
+   Enemy oppenent3 = new Enemy("Silver Knight",570, eMod);
+
+  
    //inventory added as third argument to player.
-   Player player = new Player(playerName, 700,inventory);
+   Player player = new Player(playerName, 700,inventory, pMod);
    
    //Story Text Starts.
    Story newStory = new Story();
@@ -285,4 +325,5 @@ public static void main(String[] args)
       }
       
 }
+
 }

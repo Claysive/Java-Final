@@ -20,10 +20,11 @@ public class Enemy
    public int playerArmor = 0;
    
    //extra parameter added (armor).
-   public Enemy(String name, int health)
+   //added health modifier to constructor
+   public Enemy(String name, int health, double mod)
    {
       this.name = name;
-      this.health = health;
+      this.health = (int) ((health * mod) + 0.5);
       
    }
    

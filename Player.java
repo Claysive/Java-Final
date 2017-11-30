@@ -31,10 +31,11 @@ public class Player
                                 {0,0,0,0,0},
                                 {0,0,0,0,0}};
                                 
-   public Player(String name, int health,int[][] inventory)
+   //added health modifier to constructor
+   public Player(String name, int health,int[][] inventory, double mod)
    {
       this.name = name;
-      this.health = health;
+      this.health = (int) ((health * mod) + 0.5);
       this.inventory = inventory;
       
       
